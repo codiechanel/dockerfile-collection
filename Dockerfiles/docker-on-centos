@@ -1,5 +1,5 @@
 FROM centos:7.3.1611
-RUN yum check-update
+RUN (yum check-update || true)
 RUN curl -fsSL https://get.docker.com/ | sh
-RUN sudo systemctl enable docker.service
+RUN systemctl enable docker.service
 CMD ["bash"]
